@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'my-json-server.typicode.com/skfya/task-tracker/tasks'
+  private apiUrl = 'https://my-json-server.typicode.com/skfya/task-tracker/tasks';
   constructor(private http:HttpClient) { }
 
   getTasks(): Observable<Task[]>{
