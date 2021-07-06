@@ -1,0 +1,13 @@
+# .github/workflows/main.yaml
+on: push # Trigger this workflow when new commits or tags are pushed to any branch
+jobs:
+  main: # The configuration for our only job in this workflow, which we arbitrarily called "main"
+    runs-on: ubuntu-latest # Run on an Ubuntu machine provided by GitHub dynamically
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - run: npm ci
+      - run: npm run server
+      - run: npm run build
